@@ -1,0 +1,88 @@
+﻿				DOCUMENTATION FOR PROJECT SETUP					
+
+STEP 1:
+Set up the Environment by running command python3 -m venv venv
+Activate venv source  venv/bin/activate
+
+STEP 2:
+Create Database  traffic_violation_db.
+
+STEP 3:
+Create Table using query
+CREATE TABLE traffic_violations (
+    seq_id VARCHAR(50),
+
+    date_of_stop DATE,
+    time_of_stop TIME,
+
+    agency VARCHAR(50),
+    sub_agency VARCHAR(255),
+
+    description TEXT,
+    location VARCHAR(255),
+
+    latitude DOUBLE,
+    longitude DOUBLE,
+
+    accident BOOLEAN,
+    belts BOOLEAN,
+    personal_injury BOOLEAN,
+    property_damage BOOLEAN,
+    fatal BOOLEAN,
+
+    commercial_license BOOLEAN,
+    hazmat BOOLEAN,
+    commercial_vehicle BOOLEAN,
+    alcohol BOOLEAN,
+    work_zone BOOLEAN,
+
+    search_conducted BOOLEAN,
+
+    search_disposition VARCHAR(255),
+    search_outcome VARCHAR(255),
+    search_reason VARCHAR(255),
+    search_reason_for_stop VARCHAR(255),
+    search_type VARCHAR(255),
+    search_arrest_reason VARCHAR(255),
+
+    state VARCHAR(20),
+
+    vehicle_type VARCHAR(100),
+
+    year INT,
+
+    make VARCHAR(100),
+    model VARCHAR(100),
+    color VARCHAR(50),
+
+    violation_type VARCHAR(100),
+    charge VARCHAR(100),
+    article VARCHAR(100),
+
+    contributed_to_accident BOOLEAN,
+
+    race VARCHAR(50),
+    gender VARCHAR(20),
+
+    driver_city VARCHAR(100),
+    driver_state VARCHAR(20),
+    dl_state VARCHAR(20),
+
+    arrest_type VARCHAR(100),
+
+    geolocation VARCHAR(255),
+
+    month int,
+    day VARCHAR(20);
+
+STEP 4: Run command for Database connectivity
+			pip install pymysql sqlalchemy
+			Collecting pymysql
+);
+STEP 5: Run the requirement.txt
+		pip install -r rtequirement.txt
+STEP 6: Load data into DB
+	python3 database/import_data.py
+STEP 7:Run app.py
+	streamlit run dashboard/app.py
+
